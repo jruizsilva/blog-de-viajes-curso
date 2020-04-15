@@ -1,0 +1,280 @@
+@import 'variables';
+@import 'mixins';
+
+html{
+    @include box-sizing(border-box);
+}
+*,
+*:before,
+*:after{
+    @include box-sizing(inherit);
+}
+
+body{
+    background-color: $fondo;
+    font-family: $fuente-principal;
+}
+img{
+    max-width: 100%;
+}
+// header
+.contenedor{
+    width: 90%;
+    margin: 0 auto;
+}
+.header{
+    background-image: url('../img/hero.jpg');
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.barra{
+    .logo{
+        text-align: center;
+        img{
+            width: 380px;
+        }
+    }
+    .navegacion{
+        margin-top: 25px;
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+    
+}
+.bg-barra{
+    background-color: $primario;
+    padding: 25px 0;
+    .barra{
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+.navegacion{
+    ul{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        li{
+            margin: 0 15px;
+            a{
+                text-decoration: none;
+                color: $blanco;
+            }
+        }
+    }
+}
+.titulo{
+    position: relative;
+    h1{
+        width: 80%;
+        color: $primario;
+        position: absolute;
+        top: 100px;
+        font-size: 48px;
+        font-family: 'Arial';
+        @include telefono{
+            width: 480px;
+        }
+        @include tablet{
+            left: 20px;
+            top: 140px;
+        }
+    }
+}
+
+.contenido-principal{
+    width: 100%;
+    font-family: $fuente-principal;
+    @include telefono{
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    @include tablet{
+        width: 95%;
+    }
+    @include desktop{
+        width: 90%;
+    }
+    h2{
+        text-align: center;
+        @include telefono{
+            flex: 0 1 100%;
+            text-align: center;
+        }
+    }
+    .entrada{
+        background-color: white;
+        margin-bottom: 25px;
+        @include telefono{
+            flex: 0 1 calc(50% - 8px);
+        }
+        @include tablet{
+            flex: 0 1 calc(33% - 8px);
+        }
+    }
+}
+
+.contenido{
+    text-align: center;
+    padding: 15px 10px;
+    h3{
+        margin: 0;
+    }
+    .boton{
+        @include boton($primario, $blanco);
+    }
+    p{
+        span{
+            color: $secundario;
+        }
+    }
+}
+
+.secciones{
+    @include tablet{
+        width: 95%;
+        margin: 0 auto;
+    }
+    @include desktop{
+        width: 90%;
+    }
+    ul{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            padding: 40px 30px;
+            flex: 0 1 calc(50%);
+            @include telefono{
+                padding: 40px;
+            }
+            @include tablet{
+                flex: 0 1 calc(25%);
+            }
+            @include desktop{
+                padding: 40px 60px;
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                i{
+                    font-size: 40px;
+                }
+                p{
+                    margin-bottom: 0;
+                }
+            }
+            &:nth-child(1){background-color: RGB(0,143,209);}
+            &:nth-child(2){background-color: RGB(219,0,141);}
+            &:nth-child(3){background-color: RGB(152,0,209);}
+            &:nth-child(4){background-color: RGB(236,163,0);}
+        }
+    }
+}
+
+.footer{
+    background-color: $primario;
+    color: $blanco;
+    h4{
+        text-align: center;
+        font-size: 24px;
+        text-transform: uppercase;
+        padding: 20px 0 10px 0;
+        margin: 0;
+    }
+    p{
+        margin: 10px 0;
+        text-align: justify;  
+    }
+    .copyright{
+        margin-top: 20px;
+        background-color: #004d70;
+        p{
+            text-align: center;
+            margin: 0;
+            padding: 20px 0;
+            font-size: 18px;
+        }
+    }  
+}
+.flex-footer{
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .nosotros{
+        @include tablet{
+            flex: 0 1 calc(50% - 16px);
+        }
+        @include desktop{
+            flex: 0 1 calc(40% - 16px);  
+        }  
+    }
+    .entradas{
+        @include tablet{
+            flex: 0 1 calc(50% - 16px);
+        }
+        @include desktop{
+            flex: 0 1 calc(30% - 16px);
+        }
+    }
+    .redes{
+        @include tablet{
+            flex: 0 1 calc(100%);
+        }
+        @include desktop{
+            flex: 0 1 calc(30% - 16px);
+        }
+    } 
+} 
+.entradas{
+    text-align: center;
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            margin: 8px 0;
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 17px;
+            }
+        }
+    }
+}
+.redes{
+    ul{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        li{
+            display: inline-block;
+            margin: 0 8px;
+            a{
+                text-align: center;
+                font-size: 32px;
+                text-decoration: none;
+                color: $blanco;
+            }
+        }
+    }
+}

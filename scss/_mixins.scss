@@ -1,0 +1,30 @@
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+// Boton
+@mixin boton($bg-color, $color){
+    text-decoration: none;
+    color: $color;
+    text-transform: uppercase;
+    background-color: $primario;
+    padding: 10px 25px;
+    display: inline-block;
+    margin-top: 10px;
+} 
+
+// Tamaños
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+@mixin telefono {
+    @media (min-width: #{$telefono}) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
